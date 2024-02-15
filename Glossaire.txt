@@ -1,0 +1,44 @@
+
+dotenv / load_dotenv : Une bibliothèque et une fonction pour charger des variables d'environnement à partir d'un fichier .env. 
+Ceci est utile pour gérer des configurations sensibles ou spécifiques à l'environnement, comme des clés API, sans les coder en dur dans le script.
+
+os : Un module Python qui fournit une interface avec le système d'exploitation. 
+Permet d'effectuer des opérations dépendantes du système d'exploitation, comme lire ou écrire des fichiers.
+
+PyPDF2 / PdfReader : Une bibliothèque Python pour lire des fichiers PDF et extraire des données d'eux. 
+PdfReader est une classe utilisée pour ouvrir un fichier PDF et accéder à son contenu.
+
+streamlit : Un framework pour créer des applications web pour l'analyse de données et le machine learning en Python. 
+Il permet de construire rapidement des interfaces utilisateur interactives.
+
+CharacterTextSplitter : Une classe de la bibliothèque langchain utilisée pour diviser un texte en morceaux plus petits ou en "chunks", basée sur des critères comme la taille du chunk, 
+le chevauchement entre les chunks, et un séparateur.
+
+OpenAIEmbeddings : Une classe de langchain pour générer des représentations vectorielles (embeddings) de textes en utilisant des modèles d'OpenAI. 
+Ces embeddings permettent de représenter le sens des textes de manière numérique.
+
+FAISS : Une bibliothèque pour la recherche de similarité efficace et le clustering de grands ensembles de vecteurs. 
+Dans ce contexte, FAISS est utilisé pour créer une base de connaissances vectorielles à partir des embeddings de texte, permettant des recherches de similarité rapides.
+
+load_qa_chain : Une fonction de langchain pour charger une chaîne de traitement configurée pour le question-réponse (QA). 
+Une chaîne de traitement est une séquence d'opérations de traitement du langage naturel.
+
+OpenAI : Se réfère à la classe utilisée pour interagir avec les modèles de langage d'OpenAI (comme GPT-3). 
+Utilisée ici pour traiter les questions de l'utilisateur et générer des réponses basées sur la base de connaissances.
+
+get_openai_callback : Une fonction de langchain qui fournit un callback pour suivre le coût des requêtes envoyées à l'API d'OpenAI.
+Utile pour le suivi des coûts lors de l'utilisation des services payants d'OpenAI.Étapes Clés
+
+Chargement des Variables d'Environnement : Utilisation de load_dotenv pour charger des configurations sensibles ou spécifiques.
+
+Lecture et Traitement du PDF : Utilisation de PyPDF2 pour extraire le texte d'un document PDF téléchargé par l'utilisateur.
+
+Division du Texte en Chunks : Application de CharacterTextSplitter pour diviser le texte extrait en morceaux maniables.
+
+Génération d'Embeddings : Conversion des morceaux de texte en embeddings vectoriels à l'aide d'OpenAIEmbeddings.
+
+Création d'une Base de Connaissances : Utilisation de FAISS pour organiser les embeddings dans une base de connaissances permettant la recherche de similarité.
+
+Interface Utilisateur Streamlit : Mise en place d'une interface utilisateur avec Streamlit pour télécharger des PDF, poser des questions, et afficher des réponses.
+
+Traitement des Questions : Utilisation d'une chaîne de traitement QA (load_qa_chain) et des modèles d'OpenAI pour répondre aux questions basées sur la base de connaissances.
